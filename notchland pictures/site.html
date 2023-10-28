@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+ /* Reset default styles */
+*html, *body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #1a1a1a;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: #ff6f61;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #ff4025;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: rgba(41, 43, 44, 0.9);
+    backdrop-filter: blur(5px);
+    padding: 1.5rem 0;
+    text-align: center;
+    border-bottom: 2px solid #ff6f61;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+}
+
+nav a {
+    color: #fff;
+    font-weight: bold;
+    margin: 0 1rem;
+    font-size: 1.2rem;
+    transition: color 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    border-bottom: 2px solid transparent;
+    position: relative;
+}
+
+nav a:hover,
+nav a:focus {
+    color: #ff6f61;
+    border-bottom: 2px solid #ff6f61;
+}
+
+/* Hero section */
+.hero {
+    position: relative;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+        url('path/to/minecraft-background.jpg') center/cover no-repeat;
+    text-align: center;
+    padding: 10rem 0;
+    color: #fff;
+    background-blend-mode: overlay;
+    animation: heroAnimation 10s infinite alternate;
+}
+
+@keyframes heroAnimation {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.02);
+    }
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    opacity: 0.85;
+}
+
+/* Sections */
+section {
+    padding: 10rem 0;
+    text-align: center;
+    background-color: #1a1a1a;
+}
+
+section h2 {
+    font-size: 3.5rem;
+    margin-bottom: 3rem;
+    letter-spacing: -1px;
+    color: #ff6f61;
+}
+
+/* Gallery */
+.minecraft-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 2rem;
+    margin-top: 4rem;
+}
+
+.minecraft-gallery img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.minecraft-gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+    opacity: 0.9;
+}
+
+/* Additional Sections */
+.animation-projects,
+.gamedev-projects {
+    padding: 10rem 0;
+    text-align: center;
+    background-color: #1a1a1a;
+}
+
+.animation-projects h2,
+.gamedev-projects h2 {
+    font-size: 3.5rem;
+    margin-bottom: 3rem;
+    letter-spacing: -1px;
+    color: #ff6f61;
+}
+
+.animation-projects p,
+.gamedev-projects p {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    opacity: 0.85;
+}
+
+.animation-gallery,
+.gamedev-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 2rem;
+    margin-top: 4rem;
+}
+
+.animation-gallery img,
+.gamedev-gallery img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.animation-gallery img:hover,
+.gamedev-gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+    opacity: 0.9;
+}
+
+/* Contact form */
+.contact-form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form h2 {
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    color: #ff6f61;
+}
+
+.contact-form p {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    color: #ccc;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.contact-form label {
+    display: block;
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+    color: #fff;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1.25rem;
+    font-size: 1rem;
+    color: #333;
+    background-color: #fff;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    background-color: #f4f4f4;
+    transform: scale(1.02);
+}
+
+.contact-form button {
+    padding: 1.25rem 2.5rem;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #ff6f61;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+    letter-spacing: -0.5px;
+}
+
+.contact-form button:hover {
+    background-color: #ff4025;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 3rem 0;
+    background-color: #292b2c;
+    color: #ccc;
+    border-top: 2px solid #ff6f61;
+    position: relative;
+    z-index: 1;
+}
+
+/* Responsive media queries */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        margin: 0.75rem 0;
+    }
+
+    .hero {
+        padding: 8rem 0;
+    }
+
+    .contact-form {
+        padding: 3rem;
+    }
+}
+
+/* Additional Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Sticky Navigation */
+nav {
+    position: sticky;
+    top: 0;
+    background-color: rgba(41, 43, 44, 0.9);
+    backdrop-filter: blur(2px);
+}
+
+/* Scroll Reveal */
+[data-scroll] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+[data-scroll].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+    </style>
+    <title>Portfolio</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#minecraft">Minecraft</a></li>
+                <li><a href="#gamedevelopment">Game Development</a></li>
+                <li><a href="#animation">Animation</a></li>
+                <li><a href="#collabs">Collaborations</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="hero">
+            <h1>Unleashing Creativity Through Code</h1>
+            <p>From Ingenious Minecraft Creations to Exemplary Software Engineering</p>
+            <a href="#contact" class="cta-button">Get in Touch</a>
+        </div>
+    </section>
+
+    <section id="minecraft">
+        <div class="section-intro">
+            <h2>Pioneering Worlds: A Decade of Minecraft Artistry</h2>
+            <p>Over a span of ten years, I have passionately crafted immersive realms as a Master Minecraft Map Builder, meticulously weaving captivating narratives through the intricate tapestry of pixels. My designs consistently captivate the minds of countless individuals, a testament to my unparalleled artistic acumen and innovative spirit.</p>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="notchland3.jpg" alt="Minecraft Project 1">
+                <img src="notchland1.jpg" alt="Minecraft Project 1">
+                <img src="notchland2.jpg" alt="Minecraft Project 1">
+                <img src="notchland4.jpg" alt="Minecraft Project 1">
+                <p class="image-caption">Notchland Amusement Park</p>
+            </div>
+            <div class="gallery-item">
+                <img src="nr2.jpg" alt="Minecraft Project 2">
+                <img src="nr3.jpg" alt="Minecraft Project 2">
+                <img src="nr1.jpg" alt="Minecraft Project 2">
+                <p class="image-caption">Notch Rapids</p>
+            </div>
+            <!-- Add more gallery items -->
+        </div>
+    </section>
+    <section id="gamedevelopment">
+        <div class="section-intro">
+            <h2>Elevating Gaming Experiences: Game Development Showcase</h2>
+            <p>Immerse players in captivating worlds with these game development projects that blend creativity and technology:</p>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="game1.jpg" alt="Game Development Project 1">
+                <p class="image-caption">Colorspolosion</p>
+            </div>
+            <div class="gallery-item">
+                <img src="game2.jpg" alt="Game Development Project 2">
+                <p class="image-caption">Creep Annihilator</p>
+            </div>
+            <div class="gallery-item">
+                <img src="game3.jpg" alt="Game Development Project 2">
+                <p class="image-caption">Puck-Man</p>
+                <div class="gallery-item">
+                    <img src="game4.jpg" alt="Game Development Project 2">
+                    <p class="image-caption">Red VS Blue</p>
+                </div>
+            </div>
+            <!-- Add more gallery items -->
+        </div>
+    </section>
+    <section id="animation">
+        <div class="section-intro">
+            <h2>Exploring the Art of Animation</h2>
+            <p>Delve into the world of animation where visual storytelling comes to life. Here are some of my animation projects that bring imagination to the screen:</p>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="animation1.jpg" alt="Animation Project 1">
+                <p class="image-caption">Minecraft Clone Land Generator</p>
+            </div>
+            <div class="gallery-item">
+                <img src="animation2.jpg" alt="Animation Project 2">
+                <p class="image-caption">Lava Lamp Demo</p>
+                <div class="gallery-item">
+                    <img src="animation3.jpg" alt="Animation Project 2">
+                    <p class="image-caption">Physics Demo</p>
+            </div>
+            <!-- Add more gallery items -->
+        </div>
+    </section>
+    <section id="collabs">
+        <div class="collabs-intro">
+            <h2>Collaborations: Bridging Realities Beyond the Digital Canvas</h2>
+            <p>My collaborative endeavors with esteemed luminaries and visionaries have catalyzed the convergence of disparate realms, giving rise to unforgettable experiences that transcend the confines of the virtual world.</p>
+        </div>
+        <div class="collabs-videos">
+            <div class="collabs-videos">
+                <a href="https://www.youtube.com/watch?v=7XuvhXaTPlo&t=209s">ibxtoycat collab</a><br>
+                <a href="https://www.youtube.com/watch?v=sxN6TQaSvhs">bigb collab</a><br>
+                <a href="https://www.youtube.com/watch?v=T4dhIMVtPVE&t=1124s">4j studios lounge helped build</a><br>
+                <a href="https://www.youtube.com/watch?v=iq9e9D4jIKQ">sb7 playing disney hunger games</a><br>
+                <a href="https://www.youtube.com/watch?v=p-Ywvp_GEE4">bigb disney hunger games</a><br>
+                <a href="https://www.youtube.com/watch?v=kKsgWl3eOV0">bigb collab disney hunger games</a><br>
+                <a href="https://www.youtube.com/watch?v=wnNIsjELz0U">collab on build with nuropsych1 and rivergrl</a><br>
+                <a href="https://www.youtube.com/watch?v=KRoXm1o2nak&t=23s">ibxtoycat collab</a><br>
+                <a href="https://www.youtube.com/watch?v=c0hOjvsUBCQ&t=3s">put out the download, did the download video and got youtubers to play this map built by two brothers</a><br>
+                <a href="https://www.youtube.com/watch?v=mZyjMO-Q2yU&list=PLHa_sDQZZ5XJrr2UMoLsdYXhtf1ld4nNK">stampy resolitude series with squid</a><br>
+                <a href="https://www.planetminecraft.com/project/resolitude-adventure-map-includes-over-6-hours-of-game-play/">showcasing resolitude through networking</a><br>
+                <a href="https://www.youtube.com/watch?v=JnFKPdhiAu0&t=217s">showcasing railbusters and behind the scenes for nuro and river</a><br>
+                <a href="https://www.youtube.com/watch?v=JnFKPdhiAu0&t=217s">episode 2 showcasing railbusters</a><br>
+                <a href="https://www.youtube.com/watch?v=b3Guq0xVsFo&t=166s">collabing with daisy from stampylongnose videos and bigb on my 100th video and map i converted and added to</a><br>
+                <a href="https://www.youtube.com/watch?v=oOanZ1HgIXM&t=1049s">subscribers made me a hunger games map based off me</a><br>
+                <a href="https://www.youtube.com/watch?v=TvgQWghqL30&list=PLbbvYFKohVhJKT2YrEH5iJ-mNLynhmnoN&index=15">emzy255 collab</a><br>
+                <a href="https://www.youtube.com/watch?v=7resvajRKSY&list=PLbbvYFKohVhJKT2YrEH5iJ-mNLynhmnoN&index=24">stampylongnose collab</a><br>
+                <a href="https://www.youtube.com/watch?v=Kn3cBv2sOTk&list=PLbbvYFKohVhJKT2YrEH5iJ-mNLynhmnoN&index=94">collab with ibxtoycat and bigb</a><br>
+                <a href="https://www.youtube.com/watch?v=p-Ywvp_GEE4&t=55s">bigb playing map i helped fixed and converted</a><br>
+                <a href="https://www.youtube.com/watch?v=4IpMOAIeMVY">Map featuring me</a><br>
+                <a href="https://www.youtube.com/watch?v=-BYxzn08t14">Collab with misspinkmermaid and amylee33</a><br>
+                <a href="https://www.youtube.com/watch?v=_loStUk-z9U">Collab truetriz and boltztheclown</a><br>
+                <a href="https://www.youtube.com/watch?v=z3Jp7AD0reI">Collab with emzy255</a><br>
+                <a href="https://www.youtube.com/watch?v=TvgQWghqL30&t=233s">Collab with emzy255</a><br>
+                <a href="https://www.youtube.com/watch?v=8M96VwQmD0o">Collab with daisy from stampy videos</a><br>
+                <a href="https://www.youtube.com/watch?v=beYY0CzJyeQ">Map featuring me</a><br>
+                <a href="https://www.youtube.com/watch?v=URYBhHbB8nE">Map featuring me</a><br>
+                <a href="https://www.youtube.com/watch?v=JlGbFBQfo08">Map featuring me</a><br>
+                <a href="https://www.youtube.com/watch?v=2Hl0MRILwQk">Map featuring me</a><br>
+                <a href="https://www.youtube.com/watch?v=-6o67Wp8cE4&list=PLYjfACrYo0CbsfUNeScFi9gbiMvAhIR2i">My World on Stem site since 2015</a><br>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-form">
+            <h2>Let's Shape the Future Together</h2>
+            <p>If you are poised to embark on pioneering ventures within the realms of Minecraft and beyond, I extend an invitation to connect with me. Reach out, and together, we shall explore the horizons of limitless creativity and innovation.</p>
+            <form action="#" method="post">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Jason Leisure. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
